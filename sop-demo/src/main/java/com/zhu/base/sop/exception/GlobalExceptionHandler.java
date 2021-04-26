@@ -1,4 +1,4 @@
-package com.zhu.exception;
+package com.zhu.base.sop.exception;
 
 import com.gitee.sop.servercommon.exception.ExceptionHolder;
 import lombok.AllArgsConstructor;

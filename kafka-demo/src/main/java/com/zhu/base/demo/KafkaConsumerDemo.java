@@ -1,4 +1,4 @@
-package com.zhu.demo;
+package com.zhu.base.demo;
 
 
 import cn.hutool.core.collection.CollUtil;

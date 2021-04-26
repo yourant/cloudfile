@@ -1,4 +1,4 @@
-package com.zhu;
+package com.zhu.base;
 
 /**
  * @author: ZhuHaiBo

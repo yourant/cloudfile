@@ -1,9 +1,9 @@
-package com.zhu.test;
+package com.zhu.base.test;
 
-import com.zhu.demo.KafkaConsumerDemo;
-import com.zhu.demo.KafkaProducerAsyncDemo;
-import com.zhu.demo.KafkaProducerDemo;
-import com.zhu.util.KafkaUtils;
+import com.zhu.base.demo.KafkaConsumerDemo;
+import com.zhu.base.demo.KafkaProducerAsyncDemo;
+import com.zhu.base.demo.KafkaProducerDemo;
+import com.zhu.base.util.KafkaUtils;
 import org.junit.Test;
 
 /**

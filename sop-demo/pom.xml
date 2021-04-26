@@ -21,10 +21,10 @@
                     <groupId>com.alibaba.cloud</groupId>
                     <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
                 </exclusion>
-                <exclusion>
+               <!-- <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-data-redis</artifactId>
-                </exclusion>
+                </exclusion>-->
             </exclusions>
         </dependency>
 
@@ -32,6 +32,11 @@
             <groupId>com.gitee.sop</groupId>
             <artifactId>sop-service-common</artifactId>
             <version>4.4.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

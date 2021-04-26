@@ -1,4 +1,4 @@
-package com.zhu.config;
+package com.zhu.base.sop.config;
 
 import com.gitee.sop.servercommon.configuration.AlipayServiceConfiguration;
 import org.springframework.context.annotation.Configuration;
