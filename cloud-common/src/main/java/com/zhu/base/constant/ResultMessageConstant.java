@@ -18,4 +18,7 @@ public class ResultMessageConstant {
      */
     public static final String ERROR_MESSAGE = "ERROR";
 
+
+    private ResultMessageConstant() {
+    }
 }

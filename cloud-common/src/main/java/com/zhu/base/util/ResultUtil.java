@@ -1,32 +1,64 @@
 package com.zhu.base.util;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import com.zhu.base.constant.ResultCodeConstant;
+import com.zhu.base.constant.ResultMessageConstant;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @author: ZhuHaiBo
  * @date: 2021/4/26  11:16
  */
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class ResultUtil<T> {
 
+    /**
+     * 状态码
+     * {@link com.zhu.base.constant.ResultCodeConstant}
+     */
     private Integer code;
 
+    /**
+     * 状态信息
+     * {@link com.zhu.base.constant.ResultMessageConstant}
+     */
     private String message;
 
-    private T info;
+    /**
+     * 返回数据
+     */
+    private T data;
 
-    public ResultUtil<T> success() {
+
+    public static <T> ResultUtil<T> success(T data) {
+        return new ResultUtil<>(ResultCodeConstant.SUCCESS, ResultMessageConstant.SUCCESS_MESSAGE, data);
+    }
 
 
+    public static ResultUtil<Void> success() {
+        return new ResultUtil<>(ResultCodeConstant.SUCCESS, ResultMessageConstant.SUCCESS_MESSAGE);
+    }
 
-        return null;
+    public static <T> ResultUtil<T> error(T data) {
+        return new ResultUtil<>(ResultCodeConstant.ERROR, ResultMessageConstant.ERROR_MESSAGE, data);
+    }
+
+    public static ResultUtil<Void> error() {
+        return new ResultUtil<>(ResultCodeConstant.ERROR,ResultMessageConstant.ERROR_MESSAGE);
+    }
+
+    public ResultUtil(Integer code, String message, T data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+    }
+
+    public ResultUtil(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public ResultUtil() {
     }
 
 }

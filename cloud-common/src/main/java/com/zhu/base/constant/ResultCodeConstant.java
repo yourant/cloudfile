@@ -17,4 +17,13 @@ public class ResultCodeConstant {
      * 失败
      */
     public static final Integer ERROR = 200002;
+
+    /**
+     * 超时
+     */
+    public static final Integer TIME_OUT = 100002;
+
+    private ResultCodeConstant() {
+
+    }
 }
