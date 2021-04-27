@@ -30,19 +30,31 @@ public class TokenDemoController {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
-    @Open(value = "checkToken", version = "1.0",needToken = true)
+    /**
+     * 验证SOP平台，ACCESS_TOKEN
+     *
+     * @return
+     */
+    @Open(value = "checkToken", version = "1.0", needToken = true)
     @GetMapping("/checkToken")
     public BaseEntity checkToken() {
         OpenContext openContext = ServiceContext.getCurrentContext().getOpenContext();
 
         String cacheKey = getCacheKey(openContext.getMethod(), openContext.getVersion());
         Object token = redisTemplate.opsForValue().get(cacheKey);
-        if (ObjectUtil.isNull(token) || ObjectUtil.notEqual(String.valueOf(token),openContext.getAppAuthToken())) {
+        if (ObjectUtil.isNull(token) || ObjectUtil.notEqual(String.valueOf(token), openContext.getAppAuthToken())) {
             return BaseEntity.builder().id(-1).username("error").build();
         }
         return BaseEntity.builder().id(1).username("admin").build();
     }
 
+    /**
+     * 获取刷新 ACCESS_TOKEN
+     *
+     * @param routeName 路由名称
+     * @param version   理由版本
+     * @return
+     */
     @GetMapping("/reflashToken")
     public String reflashToken(@RequestParam String routeName, @RequestParam String version) {
         String token = StringUtils.replace(
