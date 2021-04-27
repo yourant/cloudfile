@@ -5,12 +5,14 @@ import com.zhu.base.constant.ResultCodeConstant;
 import com.zhu.base.constant.ResultMessageConstant;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author: ZhuHaiBo
  * @date: 2021/4/26  11:16
  */
 @Data
-public class ResultUtil<T> {
+public class ResultUtil<T> implements Serializable {
 
     /**
      * 状态码
@@ -33,7 +35,6 @@ public class ResultUtil<T> {
     public static <T> ResultUtil<T> success(T data) {
         return new ResultUtil<>(ResultCodeConstant.SUCCESS, ResultMessageConstant.SUCCESS_MESSAGE, data);
     }
-
 
     public static ResultUtil<Void> success() {
         return new ResultUtil<>(ResultCodeConstant.SUCCESS, ResultMessageConstant.SUCCESS_MESSAGE);
