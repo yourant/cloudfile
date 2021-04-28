@@ -2,16 +2,13 @@ package com.zhu.base.sop.controller;
 
 
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.core.util.RandomUtil;
 import com.gitee.sop.servercommon.annotation.Open;
-import com.gitee.sop.servercommon.bean.OpenContext;
-import com.gitee.sop.servercommon.bean.ServiceContext;
 import com.zhu.base.entity.BaseEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,15 +33,15 @@ public class TokenDemoController {
      * @return
      */
     @Open(value = "checkToken", version = "1.0", needToken = true)
-    @GetMapping("/checkToken")
+    @PostMapping("/checkToken")
     public BaseEntity checkToken() {
-        OpenContext openContext = ServiceContext.getCurrentContext().getOpenContext();
-
-        String cacheKey = getCacheKey(openContext.getMethod(), openContext.getVersion());
-        Object token = redisTemplate.opsForValue().get(cacheKey);
-        if (ObjectUtil.isNull(token) || ObjectUtil.notEqual(String.valueOf(token), openContext.getAppAuthToken())) {
-            return BaseEntity.builder().id(-1).username("error").build();
-        }
+        //OpenContext openContext = ServiceContext.getCurrentContext().getOpenContext();
+        //
+        //String cacheKey = getCacheKey(openContext.getMethod(), openContext.getVersion());
+        //Object token = redisTemplate.opsForValue().get(cacheKey);
+        //if (ObjectUtil.isNull(token) || ObjectUtil.notEqual(String.valueOf(token), openContext.getAppAuthToken())) {
+        //    return BaseEntity.builder().id(-1).username("error").build();
+        //}
         return BaseEntity.builder().id(1).username("admin").build();
     }
 

@@ -12,6 +12,7 @@
         <module>sop-demo</module>
         <module>cloud-common</module>
         <module>kafka-demo</module>
+        <module>boot-demo</module>
     </modules>
 
     <properties>
