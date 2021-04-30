@@ -1,6 +1,5 @@
 package com.zhu.base.sop.controller;
 
-import com.gitee.sop.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,13 +17,13 @@ import java.util.Map;
 @RestController
 public class FirstDemoController {
 
-    @Open(value = "sop.first")
+    //@Open(value = "sop.first")
     @PostMapping(value = "/first")
     public Object getStart() {
         return new BaseEntity(1, "admin");
     }
 
-    @Open(value = "getMapParam")
+    //@Open(value = "getMapParam")
     @PostMapping("/getMapParam")
     public BaseEntity getMapParam() {
         Map<String, String> map = new HashMap<>();

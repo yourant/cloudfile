@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2021/4/27  14:26
  */
 @RestController
-public class ResultController {
+public class ResultDemoController {
 
     @PostMapping("/result")
     public ResultUtil<BaseEntity> getBaseInfo() {

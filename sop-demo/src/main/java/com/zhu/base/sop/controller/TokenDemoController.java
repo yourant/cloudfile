@@ -2,7 +2,6 @@ package com.zhu.base.sop.controller;
 
 
 import cn.hutool.core.date.DateUtil;
-import com.gitee.sop.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -32,7 +31,7 @@ public class TokenDemoController {
      *
      * @return
      */
-    @Open(value = "checkToken", version = "1.0", needToken = true)
+    //@Open(value = "checkToken", version = "1.0", needToken = true)
     @PostMapping("/checkToken")
     public BaseEntity checkToken() {
         //OpenContext openContext = ServiceContext.getCurrentContext().getOpenContext();

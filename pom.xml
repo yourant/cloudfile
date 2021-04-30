@@ -13,6 +13,8 @@
         <module>cloud-common</module>
         <module>kafka-demo</module>
         <module>boot-demo</module>
+        <module>sop-demo-cluster1</module>
+        <module>sop-demo-cluster2</module>
     </modules>
 
     <properties>
