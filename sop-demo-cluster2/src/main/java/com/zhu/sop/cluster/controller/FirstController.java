@@ -3,9 +3,13 @@ package com.zhu.sop.cluster.controller;
 import com.gitee.sop.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import com.zhu.base.util.ResultUtil;
+import com.zhu.sop.cluster.global.GlobalValue;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 /**
  * @author: ZhuHaiBo
@@ -15,11 +19,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FirstController {
 
-    @Open(value = "sop.cluster", version = "2.0")
+    @Autowired
+    private GlobalValue globalValue;
+
+    @Open(value = "sop.cluster", version = "1.0")
     @GetMapping("/getCluster")
     public ResultUtil<BaseEntity> getCluster2() {
         log.info("请求到达Cluster2");
-        BaseEntity baseEntity = BaseEntity.builder().id(1001).username("Cluster2").build();
+        BaseEntity baseEntity = BaseEntity.builder().id(2002).username("Cluster2").build();
         return ResultUtil.success(baseEntity);
+    }
+
+    @GetMapping("/result")
+    public void getResult() {
+        Map<String, Map<String, Object>> all = globalValue.getAll();
+        System.out.println(all);
+
     }
 }

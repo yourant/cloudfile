@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FirstController {
 
-    @Open(value = "sop.cluster", version = "1.0")
+    @Open(value = "sop.cluster", version = "2.0")
     @GetMapping("/getCluster")
     public ResultUtil<BaseEntity> getCluster2() {
-        log.info("请求到达Cluster1");
-        BaseEntity baseEntity = BaseEntity.builder().id(1001).username("Cluster1").build();
+        log.info("请求到达Cluster4");
+        BaseEntity baseEntity = BaseEntity.builder().id(4004).username("Cluster4").build();
         return ResultUtil.success(baseEntity);
     }
 }

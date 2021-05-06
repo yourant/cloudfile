@@ -1,0 +1,12 @@
+server:
+  port: 7004
+spring:
+  application:
+    name: sop-demo-cluster
+ # nacos
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        service: ${spring.application.name}
+        server-addr: 127.0.0.1:8848

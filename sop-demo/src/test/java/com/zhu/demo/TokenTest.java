@@ -21,4 +21,12 @@ public class TokenTest {
         System.out.println(s);
     }
 
+    @Test
+    public void testStr() {
+        String name = "@@sop-demo-cluster";
+        System.out.println(StringUtils.substring(name, StringUtils.indexOf(name, "@@")+2));
+        System.out.println(StringUtils.substring(name, StringUtils.lastIndexOf(name, "@@")));
+        //System.out.println(StringUtils.lastOrdinalIndexOf(name, "@@"));
+    }
+
 }

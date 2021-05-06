@@ -15,6 +15,8 @@
         <module>boot-demo</module>
         <module>sop-demo-cluster1</module>
         <module>sop-demo-cluster2</module>
+        <module>sop-demo-cluster3</module>
+        <module>sop-demo-cluster4</module>
     </modules>
 
     <properties>
