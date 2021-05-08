@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 7071
 spring:
   application:
     name: sop-demo
