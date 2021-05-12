@@ -1,6 +1,8 @@
 package com.zhu.sop.cluster.config;
 
-import com.gitee.sop.servercommon.configuration.AlipayServiceConfiguration;
+//import com.gitee.sop.servercommon.configuration.AlipayServiceConfiguration;
+
+import com.asinking.open.servercommon.configuration.AlipayServiceConfiguration;
 import org.springframework.context.annotation.Configuration;
 
 /**

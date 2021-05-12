@@ -1,6 +1,6 @@
 package com.zhu.sop.cluster.controller;
 
-import com.gitee.sop.servercommon.annotation.Open;
+import com.asinking.open.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import com.zhu.base.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -18,16 +18,16 @@ public class FirstController {
     @Open(value = "sop.cluster", version = "1.0")
     @GetMapping("/getCluster1")
     public ResultUtil<BaseEntity> getCluster1() {
-        log.info("请求到达Cluster1, Version = 1.0");
-        BaseEntity baseEntity = BaseEntity.builder().id(1001).username("Cluster1").build();
+        log.info("请求到达7001 Cluster1, Version = 1.0");
+        BaseEntity baseEntity = BaseEntity.builder().id(1001).username("请求到达7001 Cluster1, Version = 1.0").build();
         return ResultUtil.success(baseEntity);
     }
 
     @Open(value = "sop.cluster", version = "2.0")
     @GetMapping("/getCluster2")
     public ResultUtil<BaseEntity> getCluster2() {
-        log.info("请求到达Cluster1, Version = 2.0");
-        BaseEntity baseEntity = BaseEntity.builder().id(1001).username("Cluster1").build();
+        log.info("请求到达7001 Cluster1, Version = 2.0");
+        BaseEntity baseEntity = BaseEntity.builder().id(1001).username("请求到达7001 Cluster1, Version = 2.0").build();
         return ResultUtil.success(baseEntity);
     }
 }
