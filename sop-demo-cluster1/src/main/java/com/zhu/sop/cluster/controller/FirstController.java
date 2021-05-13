@@ -1,6 +1,7 @@
 package com.zhu.sop.cluster.controller;
 
-import com.asinking.open.servercommon.annotation.Open;
+
+import com.gitee.sop.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import com.zhu.base.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;

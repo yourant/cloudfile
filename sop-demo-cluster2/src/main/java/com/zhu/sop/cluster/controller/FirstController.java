@@ -1,8 +1,7 @@
 package com.zhu.sop.cluster.controller;
 
-//import com.gitee.sop.servercommon.annotation.Open;
 
-import com.asinking.open.servercommon.annotation.Open;
+import com.gitee.sop.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import com.zhu.base.util.ResultUtil;
 import com.zhu.sop.cluster.global.GlobalValue;
