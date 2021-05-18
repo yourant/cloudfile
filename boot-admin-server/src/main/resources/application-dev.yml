@@ -1,0 +1,18 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: boot-admin-server
+#  management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include: '*'
+#    endpoint:
+#      health:
+#        show-details: always
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#        service: ${spring.application.name}
