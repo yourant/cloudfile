@@ -15,8 +15,6 @@
         <module>boot-admin-server</module>
         <module>sop-demo-cluster1</module>
         <module>sop-demo-cluster2</module>
-        <module>shell-demo1</module>
-        <module>shell-demo2</module>
         <module>sop-demo-cluster3</module>
         <module>sop-demo-cluster4</module>
         <module>boot-client-server</module>
