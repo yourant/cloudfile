@@ -3,16 +3,45 @@ server:
 spring:
   application:
     name: boot-admin-server
-#  management:
-#    endpoints:
-#      web:
-#        exposure:
-#          include: '*'
-#    endpoint:
-#      health:
-#        show-details: always
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8848
-#        service: ${spring.application.name}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        service: ${spring.application.name}
+  #  Spring Security
+  security:
+    user:
+      name: root
+      password: root
+      roles: admin
+  #  mail
+  mail:
+    host: smtp.qq.com
+    username: 1838034329@qq.com
+    password: sfapihpeicfefaci
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  boot:
+    admin:
+      notify:
+        mail:
+          enabled: true
+          from: Spring Boot Admin<1838034329@qq.com>
+          to: zhuhaibo@asinking.com
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: info
