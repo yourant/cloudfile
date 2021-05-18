@@ -19,7 +19,7 @@
         <module>shell-demo2</module>
         <module>sop-demo-cluster3</module>
         <module>sop-demo-cluster4</module>
-        <module>boot-admin-client</module>
+        <module>boot-client-server</module>
     </modules>
 
     <properties>
