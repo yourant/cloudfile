@@ -7,6 +7,7 @@ import com.zhu.base.util.ResultUtil;
 import com.zhu.sop.cluster.global.GlobalValue;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class FirstController {
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @Value("${share}")
+    private String share;
 
     @Autowired
     private GlobalValue globalValue;
@@ -37,10 +44,8 @@ public class FirstController {
         return ResultUtil.success(baseEntity);
     }
 
-    //@GetMapping("/result")
-    //public void getResult() {
-    //    Map<String, Map<String, Object>> all = globalValue.getAll();
-    //    System.out.println(all);
-    //
-    //}
+    @GetMapping("/getShare")
+    public void getShare() {
+        log.info("serverPort:{}，share：{}", serverPort, share);
+    }
 }

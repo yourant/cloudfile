@@ -5,6 +5,7 @@ import com.gitee.sop.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import com.zhu.base.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,12 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 @RestController
 public class FirstController {
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @Value("${share}")
+    private String share;
 
     @Open(value = "sop.cluster", version = "1.0")
     @GetMapping("/getCluster1")
@@ -32,5 +39,10 @@ public class FirstController {
         log.info("请求到达7001 Cluster1, Version = 2.0");
         BaseEntity baseEntity = BaseEntity.builder().id(1001).username("请求到达7001 Cluster1, Version = 2.0").build();
         return ResultUtil.success(baseEntity);
+    }
+
+    @GetMapping("/getShare")
+    public void getShare() {
+        log.info("serverPort:{}，share：{}", serverPort, share);
     }
 }

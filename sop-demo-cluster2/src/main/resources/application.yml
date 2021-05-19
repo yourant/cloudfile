@@ -3,11 +3,12 @@ server:
 spring:
   application:
     name: sop-demo-cluster
+  profiles:
+    active: dev
   # nacos
   cloud:
     nacos:
       discovery:
         enabled: true
         service: ${spring.application.name}
-#        server-addr: 127.0.0.1:8848
-        server-addr: 10.49.0.102:80
+        server-addr: 127.0.0.1:8848

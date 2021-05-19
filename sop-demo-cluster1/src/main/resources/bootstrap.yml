@@ -3,7 +3,9 @@ server:
 spring:
   application:
     name: sop-demo-cluster
- # nacos
+  profiles:
+    active: dev
+  # nacos
   cloud:
     nacos:
       discovery:
@@ -12,3 +14,7 @@ spring:
         server-addr: 127.0.0.1:8848
       config:
         server-addr: 127.0.0.1:8848
+        shared-configs:
+          - data-id: sop-demo-cluster-dev.yml
+            group: DEFAULT_GROUP
+            refresh: true
