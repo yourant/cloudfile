@@ -4,6 +4,7 @@ package com.zhu.sop.cluster.controller;
 import com.gitee.sop.servercommon.annotation.Open;
 import com.zhu.base.entity.BaseEntity;
 import com.zhu.base.util.ResultUtil;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,7 @@ public class FirstController {
     @Value("${share}")
     private String share;
 
+    @ApiOperation(value = "getCluster1",notes = "getCluster1接口")
     @Open(value = "sop.cluster", version = "1.0")
     @GetMapping("/getCluster1")
     public ResultUtil<BaseEntity> getCluster1(@RequestBody BaseEntity tempBody, HttpServletRequest request) {
