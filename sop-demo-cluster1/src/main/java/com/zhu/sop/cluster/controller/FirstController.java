@@ -22,8 +22,8 @@ public class FirstController {
     @Value("${server.port}")
     private String serverPort;
 
-    @Value("${share}")
-    private String share;
+    //@Value("${share}")
+    //private String share;
 
     @ApiOperation(value = "getCluster1",notes = "getCluster1接口")
     @Open(value = "sop.cluster", version = "1.0")
@@ -43,8 +43,8 @@ public class FirstController {
         return ResultUtil.success(baseEntity);
     }
 
-    @GetMapping("/getShare")
-    public void getShare() {
-        log.info("serverPort:{}，share：{}", serverPort, share);
-    }
+    //@GetMapping("/getShare")
+    //public void getShare() {
+    //    log.info("serverPort:{}，share：{}", serverPort, share);
+    //}
 }
